@@ -78,7 +78,7 @@ namespace DES
                 }
                 sc = sc1 + sc2;
                 for (int ii = 0; ii < 48; ii++)
-                    sottochiavi[i - 1] += sc[PC2[ii]-1];
+                    chiavi[i - 1] += sc[PC2[ii]-1];
             }
 
         }
