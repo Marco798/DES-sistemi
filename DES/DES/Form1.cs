@@ -22,7 +22,7 @@ namespace DES
         public mainInterfaceDes()
         {
             InitializeComponent();
-        }     
+        }
 
         private void mainInterfaceDes_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -46,18 +46,47 @@ namespace DES
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            
+            int parsedValue;
+
+            if (!int.TryParse(textBox3.Text, out parsedValue))
+            {
+                MessageBox.Show("the key must be a number");
+            }
+            else
+            {
+               
+            }
         }
 
-        //funzione F, riceve meta messaggio (32 bits) e la sotto chiave (48)
-        //il messaggio da 32 diventa 48 (grazie alla funzione E) 
-        //xor tra messaggio a 48 bits e sotto chiave a 48bits
-        //il risultato dello xor andra diviso in 8 box (S1,S2,S3..S8) 
-        //6 bits per box che bisogna ridurre a 4 bits, in seguito i 32 bits
-        //il contenuto delle boxes andra nella funzione P che dare 32 bits co
-
-        public void functionF(int text, int key)
+        private void GeneraChiavi(object sender, EventArgs e)
         {
+            string chiave = "";
+            string appoggio = "";
+            int[] PC1 = {57,49,41,33,25,17,09, 01,58,50,42,34,26,18, 10,02,59,51,43,35,27, 19,11,03,60,52,44,36, 63,55,47,39,31,23,15, 07,62,54,46,38,30,22, 14,06,61,53,45,37,29, 21,13,05,28,20,12,04};
+            string sc1="", sc2 = "";
+
+            foreach (char c in "ciaociao")
+            {
+                appoggio += (Convert.ToString(c, 2).PadLeft(8, '0'));
+            }
+
+            for(int i=1;i<=64;i++)
+            {
+                if(i%8!=0)
+                {
+                    chiave += appoggio[i];
+                }
+            }
+
+            for(int i=0;i<28;i++)              
+                sc1 += chiave[PC1[i]];
+            for (int i = 28; i < 56; i++)
+                sc2 += chiave[PC1[i]];
+
+            for(int i=0;i<16;i++)
+            {
+
+            }
 
         }
     }
