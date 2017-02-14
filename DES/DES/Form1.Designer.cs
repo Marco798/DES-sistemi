@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Submit = new System.Windows.Forms.Button();
+            this.TestoIngresso = new System.Windows.Forms.TextBox();
+            this.TestoCriptato = new System.Windows.Forms.TextBox();
+            this.Cripta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TestoIngresso
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(509, 173);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.TestoIngresso.Location = new System.Drawing.Point(12, 25);
+            this.TestoIngresso.Multiline = true;
+            this.TestoIngresso.Name = "TestoIngresso";
+            this.TestoIngresso.Size = new System.Drawing.Size(509, 173);
+            this.TestoIngresso.TabIndex = 1;
+            this.TestoIngresso.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // TestoCriptato
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 328);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(509, 176);
-            this.textBox2.TabIndex = 2;
+            this.TestoCriptato.Location = new System.Drawing.Point(12, 328);
+            this.TestoCriptato.Multiline = true;
+            this.TestoCriptato.Name = "TestoCriptato";
+            this.TestoCriptato.Size = new System.Drawing.Size(509, 176);
+            this.TestoCriptato.TabIndex = 2;
             // 
-            // Submit
+            // Cripta
             // 
-            this.Submit.BackColor = System.Drawing.SystemColors.Window;
-            this.Submit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Submit.Enabled = false;
-            this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submit.Location = new System.Drawing.Point(12, 230);
-            this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(509, 44);
-            this.Submit.TabIndex = 3;
-            this.Submit.Text = "Send";
-            this.Submit.UseVisualStyleBackColor = false;
-            this.Submit.Click += new System.EventHandler(this.Submit_Click);
+            this.Cripta.BackColor = System.Drawing.SystemColors.Window;
+            this.Cripta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cripta.Enabled = false;
+            this.Cripta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cripta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cripta.Location = new System.Drawing.Point(12, 230);
+            this.Cripta.Name = "Cripta";
+            this.Cripta.Size = new System.Drawing.Size(509, 44);
+            this.Cripta.TabIndex = 3;
+            this.Cripta.Text = "Send";
+            this.Cripta.UseVisualStyleBackColor = false;
+            this.Cripta.Click += new System.EventHandler(this.Submit_Click);
             // 
             // label1
             // 
@@ -93,9 +93,9 @@
             this.ClientSize = new System.Drawing.Size(530, 516);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Submit);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Cripta);
+            this.Controls.Add(this.TestoCriptato);
+            this.Controls.Add(this.TestoIngresso);
             this.Name = "mainInterfaceDes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data Encryption Standard";
@@ -107,9 +107,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button Submit;
+        private System.Windows.Forms.TextBox TestoIngresso;
+        private System.Windows.Forms.TextBox TestoCriptato;
+        private System.Windows.Forms.Button Cripta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
