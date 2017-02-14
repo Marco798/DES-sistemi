@@ -16,12 +16,6 @@ C:\Users\marco\Desktop\C#\DES\DES\obj\Debug\DES.csprojResolveAssemblyReference.c
 C:\Users\marco\Desktop\C#\DES\DES\obj\Debug\DES.mainInterfaceDes.resources
 C:\Users\marco\Desktop\C#\DES\DES\obj\Debug\DES.Properties.Resources.resources
 C:\Users\marco\Desktop\C#\DES\DES\obj\Debug\DES.csproj.GenerateResource.Cache
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\bin\Debug\DES.exe.config
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\obj\Debug\DES.exe
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\obj\Debug\DES.pdb
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\bin\Debug\DES.exe
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\bin\Debug\DES.pdb
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\obj\Debug\DES.csprojResolveAssemblyReference.cache
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\obj\Debug\DES.mainInterfaceDes.resources
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\obj\Debug\DES.Properties.Resources.resources
-C:\Users\allegrima\Documents\Visual Studio 2015\Projects\DES\DES\obj\Debug\DES.csproj.GenerateResource.Cache
+C:\Users\donofrios\Desktop\DES-sistemi-master\DES\DES\bin\Debug\DES.exe.config
+C:\Users\donofrios\Desktop\DES-sistemi-master\DES\DES\obj\Debug\DES.exe
+C:\Users\donofrios\Desktop\DES-sistemi-master\DES\DES\obj\Debug\DES.pdb
