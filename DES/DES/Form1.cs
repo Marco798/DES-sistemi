@@ -23,7 +23,7 @@ namespace DES
         {
             string[] chiavi = new string[16];
             InitializeComponent();
-            GeneraChiavi("ciaociao",chiavi);
+            //GeneraChiavi("ciaociao",chiavi);
         }
 
         //conferma di voler uscire dal programma
@@ -36,18 +36,39 @@ namespace DES
         //disabilita il pulsante di invio se il testo di ingresso è vuoto
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") Submit.Enabled = false;
-            else Submit.Enabled = true;
+            if (TestoIngresso.Text == "") Cripta.Enabled = false;
+            else Cripta.Enabled = true;
         }
 
         //evento CLICK del pulsante di invio
         private void Submit_Click(object sender, EventArgs e)
         {
+            string messaggio=TestoIngresso.Text;
+            string pacchetto="";
+            while (messaggio.Length > 0)
+            {
+                spacchetta(messaggio, pacchetto);
 
+            }
+        }
+
+        //divide il messaggio in pacchetti da 64bit
+        private void spacchetta(string messaggio, string pacchetto)
+        {
+                if (messaggio.Length < 8)
+                {
+                    pacchetto = messaggio;
+                    messaggio = "";
+                }
+                else
+                {
+                    pacchetto = messaggio.Substring(0, 8);
+                    messaggio = messaggio.Substring(8, messaggio.Length - 8);
+                }
         }
 
         //INPUT: chiave a 64 bit generata casualmente
-        //OUTPUT: array di 16 stringhe da 48 caratteri
+        //OUTPUT: array di 16 stringhe da 48 bit
         private void GeneraChiavi(string ChiavePrimaria,string[] chiavi) 
         {
             string chiave = "";
@@ -79,27 +100,9 @@ namespace DES
                 sc = sc1 + sc2;
                 for (int ii = 0; ii < 48; ii++)
                     chiavi[i - 1] += sc[PC2[ii]-1];
-                textBox1.Text += chiavi[i - 1] + "\n";
+                TestoIngresso.Text += chiavi[i - 1] + "\n";
             }
 
-        }
-
-       private void PermutazioneIniziale(string Ingresso,string ParteSx, string ParteDx)
-        {
-            int[] PI = {58,50,42,34,26,18,10,02,60,52,44,36,28,20,12,04,62,54,46,38,30,22,14,06,64,56,48,40,32,24,16,08,57,49,41,33,25,17,09,01,59,51,43,35,27,19,11,03,61,53,45,37,29,21,13,05,63,55,47,39,31,23,15,07};
-
-            for (int i = 0; i < 32; i++)
-                ParteSx += Ingresso[PI[i] - 1];
-            for (int i = 0; i < 32; i++)
-                ParteDx += Ingresso[PI[i] - 1];
-        }
-
-        private void FunzioneE(string ParteDx,string ParteDx48)
-        {
-            int[] BloccoE = {32,1,2,3,4,5,4,5,6,7,8,9,8,9,10,11,12,13,12,13,14,15,16,17,16,17,18,19,20,21,20,21,22,23,24,25,24,25,26,27,28,29,28,29,30,31,32,1};
-
-            for (int i = 0; i < 48; i++)
-                ParteDx48 += ParteDx[BloccoE[i] - 1];
         }
     }
 }
