@@ -23,7 +23,7 @@ namespace DES
         {
             string[] chiavi = new string[16];
             InitializeComponent();
-            GeneraChiavi("ciaociao",chiavi);
+            //GeneraChiavi("ciaociao",chiavi);
         }
 
         //conferma di voler uscire dal programma
@@ -36,18 +36,39 @@ namespace DES
         //disabilita il pulsante di invio se il testo di ingresso è vuoto
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") Submit.Enabled = false;
-            else Submit.Enabled = true;
+            if (TestoIngresso.Text == "") Cripta.Enabled = false;
+            else Cripta.Enabled = true;
         }
 
         //evento CLICK del pulsante di invio
         private void Submit_Click(object sender, EventArgs e)
         {
+            string messaggio=TestoIngresso.Text;
+            string pacchetto="";
+            while (messaggio.Length > 0)
+            {
+                spacchetta(messaggio, pacchetto);
 
+            }
+        }
+
+        //divide il messaggio in pacchetti da 64bit
+        private void spacchetta(string messaggio, string pacchetto)
+        {
+                if (messaggio.Length < 8)
+                {
+                    pacchetto = messaggio;
+                    messaggio = "";
+                }
+                else
+                {
+                    pacchetto = messaggio.Substring(0, 8);
+                    messaggio = messaggio.Substring(8, messaggio.Length - 8);
+                }
         }
 
         //INPUT: chiave a 64 bit generata casualmente
-        //OUTPUT: array di 16 stringhe da 48 caratteri
+        //OUTPUT: array di 16 stringhe da 48 bit
         private void GeneraChiavi(string ChiavePrimaria,string[] chiavi) 
         {
             string chiave = "";
@@ -79,7 +100,7 @@ namespace DES
                 sc = sc1 + sc2;
                 for (int ii = 0; ii < 48; ii++)
                     chiavi[i - 1] += sc[PC2[ii]-1];
-                textBox1.Text += chiavi[i - 1] + "\n";
+                TestoIngresso.Text += chiavi[i - 1] + "\n";
             }
 
         }
