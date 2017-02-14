@@ -23,7 +23,7 @@ namespace DES
         {
             string[] chiavi = new string[16];
             InitializeComponent();
-            GeneraChiavi(chiavi);
+            GeneraChiavi("ciaociao",chiavi);
         }
 
         //conferma di voler uscire dal programma
@@ -48,7 +48,7 @@ namespace DES
 
         //INPUT: chiave a 64 bit generata casualmente
         //OUTPUT: array di 16 stringhe da 48 caratteri
-        private void GeneraChiavi(string[] chiavi) 
+        private void GeneraChiavi(string ChiavePrimaria,string[] chiavi) 
         {
             string chiave = "";
             int[] PC1 = {57,49,41,33,25,17,09, 01,58,50,42,34,26,18, 10,02,59,51,43,35,27, 19,11,03,60,52,44,36, 63,55,47,39,31,23,15, 07,62,54,46,38,30,22, 14,06,61,53,45,37,29, 21,13,05,28,20,12,04};
@@ -56,7 +56,7 @@ namespace DES
             string sc1 = "", sc2 = "", sc = "";
 
 
-            foreach (char c in "ciaociao")
+            foreach (char c in ChiavePrimaria)
                 chiave += (Convert.ToString(c, 2).PadLeft(8, '0'));
 
             for(int i=0;i<28;i++)              
@@ -79,6 +79,7 @@ namespace DES
                 sc = sc1 + sc2;
                 for (int ii = 0; ii < 48; ii++)
                     chiavi[i - 1] += sc[PC2[ii]-1];
+                textBox1.Text += chiavi[i - 1] + "\n";
             }
 
         }
